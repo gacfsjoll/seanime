@@ -86,6 +86,13 @@ release-notes:
 	@echo "Generating release notes for $(GIT_TAG)..."
 	go run .github/scripts/generate_release_notes.go
 
+## watch: Rebuild automatically on file changes (requires entr)
+# Install entr: https://eradman.com/entrproject/
+watch:
+	@echo "Watching for changes..."
+	@which entr > /dev/null || (echo "entr not found, install it first" && exit 1)
+	find . -name '*.go' | entr -r make run
+
 ## help: Show this help message
 help:
 	@echo "Usage: make [target]"
