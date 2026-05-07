@@ -23,6 +23,10 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: '*.simkl.com',
             },
+            {
+                protocol: 'https',
+                hostname: 'image.tmdb.org',
+            },
         ],
     },
 
